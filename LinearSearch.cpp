@@ -2,35 +2,38 @@
 using namespace std;
 int main()
 {
-    int n;
+    int n, i , key;
     cout << "enter array size: ";
     cin >> n;
     int arr[n];
-    for(int i=0;i<n;i++)
+    for(i=0;i<n;i++)
     {
-        cout << "element " << i+1 << ":";
+        cout << "element " << i+1 << " : ";
         cin >> arr[i];
     }
-    cout << "The element of array that you enter :" ;
-    for(int i=0;i<n;i++){
-        cout << arr[i] << " ";
+
+    for(i=0;i<n;i++)
+    {
+        cout <<arr[i] << " " ;
     }cout << endl;
 
-    cout << "please enter the value that you want to search: ";
-    int s;
-    cin >>s ;
-    int temp = 0;
-    for(int i=0;i<n;i++){
-        if(arr[i]== s){
-            cout << "the element is found at position " << i+1 ;
-            temp=1;
+    cout << "please enter the search value: ";
+    cin >> key;
+
+    bool found = false;
+
+    for(i=0;i<n;i++)
+    {
+        if(arr[i]==key){
+            found = true;
             break;
         }
     }
-    if(temp == 0){
-        cout << "element is not found.";
+    if(found){
+        cout << "element found at index " << i << " and position " << i+1;
+    }else
+    {
+        cout << "element not found.";
     }
-
-
     return 0;
 }
